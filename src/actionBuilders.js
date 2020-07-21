@@ -1,6 +1,6 @@
 import {
   defaultCheckbox,
-  defaultPin,
+  defaultPinIcon,
   defaultRadioButton,
   defaultColorIcon
 } from "./tableActionsUtil";
@@ -52,7 +52,7 @@ export const pinningAction = (
   }
 ) => {
   if (!icon) {
-    icon = () => defaultPin(rowData);
+    icon = () => defaultPinIcon(rowData);
   }
   return baseAction({ icon, hidden, onClick, tooltip, disabled, iconProps });
 };

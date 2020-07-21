@@ -14,7 +14,8 @@ export const defaultCheckbox = rowData =>
     <CheckBoxOutlineBlankOutlinedIcon />
   );
 export const defaultPinIcon = rowData =>
-  rowData.selected ? <PinDropOutlined /> : <PinDrop />;
+  rowData.pinned ? <PinDrop /> : <PinDropOutlined />;
+
 export const defaultRadioButton = rowData =>
   rowData.activated ? (
     <RadioButtonCheckedOutlinedIcon />
@@ -39,15 +40,13 @@ export const defaultSelect = (rowData, state) => {
 };
 
 export const defaultPin = (rowData, state) => {
-  conosle.log("state", state);
+  console.log("state", state);
   console.log("rowData", rowData)
-  let newData = { ...state }
+  let newData = [...state.data];
 
   newData[rowData.tableData.id] = {
     ...rowData,
-    pinned: rowData.includes(rowData.pinned[rowData.tableData.id])
-      ? delete rowData.pinned[rowData.tableData.id]
-      : rowData.pinned.push(rowData.tableData.id)
+    pinned: !rowData.pinned
   };
   return {
     ...state,
