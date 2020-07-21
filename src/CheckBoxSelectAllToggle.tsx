@@ -14,6 +14,7 @@ export const CheckBoxSelectAllToggle = forwardRef(
     console.log(
       Object.values(data).filter(item => item.selected === true).length
     );
+
     console.log("onclick,", onClickHandler)
     return (
       <div>

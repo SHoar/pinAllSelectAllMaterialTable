@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import MaterialTable from "material-table";
+import { selectAllAction, pinAllAction } from "./tableActionsUtil"
 import CheckBoxSelectAllToggle from "./CheckBoxSelectAllToggle";
 import PinAllSelectToggle from "./PinAllSelectToggle";
 
@@ -29,13 +30,11 @@ const BaseTable = (
   }: BaseTableParams,
   props: any
 ) => {
-  let refA = useRef<HTMLButtonElement>();
-  let refB = useRef<HTMLButtonElement>();
+  let toggleAllSelectsRef = useRef<HTMLButtonElement>(null);
+  let toggleAllPinsRef = useRef<HTMLButtonElement>(null);
 
-  const onClickHandler = (e: React.MouseEvent) => {
-    this.refA.current.onClick = alert("hello world!");
-  };
-  // const node = this.refA.current;
+  const selectAllToggle = (e: React.MouseEvent) => toggleAllSelectsRef.current.click = () => selectAllAction
+  const pinAllToggle = (e: React.MouseEvent) => toggleAllPinsRef.current.click = () => pinAllAction
   return (
     <div>
       {children}
@@ -55,13 +54,13 @@ const BaseTable = (
             actions: (
               <React.Fragment>
                 <CheckBoxSelectAllToggle
-                  ref={refA}
-                  onClickHandler={onClickHandler}
+                  ref={toggleAllSelectsRef}
+                  onClickHandler={selectAllToggle}
                   data={data}
                 />
                 <PinAllSelectToggle
-                  ref={refB}
-                  onClickHandler={onClickHandler}
+                  ref={toggleAllPinsRef}
+                  onClickHandler={pinAllToggle}
                   data={data}
                 />
               </React.Fragment>

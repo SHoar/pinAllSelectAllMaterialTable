@@ -12,7 +12,7 @@ interface D1 {
 const PinAllSelectToggle = forwardRef(
   ({ data, onClickHandler }: D1, ref: RefObject<HTMLButtonElement>) => {
     console.log(
-      Object.values(data).filter(item => item.selected === true).length
+      "onclick", onClickHandler
     );
 
     return (

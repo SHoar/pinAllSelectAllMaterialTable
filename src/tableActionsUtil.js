@@ -113,3 +113,29 @@ export const alphaNumericValidator = e => {
   }
   return e.target.value;
 };
+
+export const selectAllAction = (rowData, state) => {
+  let newData = [...state.data];
+  newData[rowData.tableData.id] = {
+    ...rowData,
+    selected: true
+  };
+  console.log("selectAll action state", newData)
+  return {
+    ...state,
+    data: newData
+  };
+}
+
+export const pinAllAction = (rowData, state) => {
+  let newData = [...state.data];
+  newData[rowData.tableData.id] = {
+    ...rowData,
+    pinned: true
+  };
+  console.log("pinAll action state", newData)
+  return {
+    ...state,
+    data: newData
+  };
+}
