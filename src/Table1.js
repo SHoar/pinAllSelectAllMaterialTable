@@ -1,7 +1,7 @@
 import * as React from "react";
 import BaseTable from "./BaseTable";
-import { defaultActivate, defaultSelect, defaultPin } from "./tableActionsUtil";
-import { textColumn, alphaNumericValidator } from "./columnBuilders";
+import { defaultActivate, defaultSelect, defaultPin, alphaNumericValidator } from "./tableActionsUtil";
+import { textColumn,  } from "./columnBuilders";
 import {
   selectionAction,
   activationAction,

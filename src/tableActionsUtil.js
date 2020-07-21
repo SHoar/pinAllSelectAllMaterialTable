@@ -39,11 +39,13 @@ export const defaultSelect = (rowData, state) => {
 };
 
 export const defaultPin = (rowData, state) => {
-  console.log(rowData, state);
-  let newData = [...state.pinned];
+  conosle.log("state", state);
+  console.log("rowData", rowData)
+  let newData = { ...state }
+
   newData[rowData.tableData.id] = {
     ...rowData,
-    pinned: rowData.contains(rowData.pinned[rowData.tableData.id])
+    pinned: rowData.includes(rowData.pinned[rowData.tableData.id])
       ? delete rowData.pinned[rowData.tableData.id]
       : rowData.pinned.push(rowData.tableData.id)
   };
