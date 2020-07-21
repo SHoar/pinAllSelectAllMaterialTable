@@ -7,13 +7,13 @@ import {
   activationAction,
   pinningAction
 } from "./actionBuilders";
-import { geoTeamData } from "./geoTeamData";
+import { teamNameData } from "./teamNames";
 
 export default class Table1 extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: geoTeamData.map(datum => {
+      data: teamNameData.map(datum => {
         return {
           ...datum,
           selected: false,

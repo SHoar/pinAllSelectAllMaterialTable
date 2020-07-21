@@ -17,7 +17,7 @@ const PinAllSelectToggle = forwardRef(
 
     return (
       <div>
-        {Object.values(data).filter(item => item.pinned === true).length <
+        {Object.values(data).filter(item => item.pinned === true).length <=
           Object.keys(data).length ? (
             <React.Fragment>
               <Tooltip placement="top" title="Select All">

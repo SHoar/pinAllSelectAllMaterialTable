@@ -1,18 +1,18 @@
-export const geoTeamData = [
+export const teamNameData = [
   {
-    first: "Andrew",
+    first: "Fruity",
     last: "Tortilla"
   },
   {
-    first: "Xavier",
+    first: "Mail",
     last: "Chimper"
   },
   {
-    first: "Kyo",
+    first: "Hungry",
     last: "Foodvacuum"
   },
   {
-    first: "Wayne",
+    first: "Memphis",
     last: "Deltablue"
   },
   {
