@@ -115,11 +115,11 @@ export const alphaNumericValidator = e => {
 };
 
 export const selectAllAction = (rowData, state) => {
-  let newData = [...state.data];
-  newData[rowData.tableData.id] = {
-    ...rowData,
-    selected: true
-  };
+  let prevData = [...state.data];
+  let newData = Object.keys(prevData).reduce((accum, rowData) => {
+    accum[rowData] = { ...rowData, pinned: true }
+    return accum
+  }, [])
   console.log("selectAll action state", newData)
   return {
     ...state,
@@ -127,12 +127,12 @@ export const selectAllAction = (rowData, state) => {
   };
 }
 
-export const pinAllAction = (rowData, state) => {
-  let newData = [...state.data];
-  newData[rowData.tableData.id] = {
-    ...rowData,
-    pinned: true
-  };
+export const pinAllAction = (state) => {
+  let prevData = [...state.data];
+  let newData = Object.keys(prevData).reduce((accum, rowData) => {
+    accum[rowData] = { ...rowData, pinned: true }
+    return accum
+  }, [])
   console.log("pinAll action state", newData)
   return {
     ...state,
